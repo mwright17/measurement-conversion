@@ -1,0 +1,10 @@
+<?php
+
+function convert($inch){
+	$cm=$inch * 2.54;
+	return $cm;
+}
+$server = new SoapServer(null, array("uri"=>"http://localhost/server.php"));
+$server->addFunction('convert');
+$server->handle();
+?>
